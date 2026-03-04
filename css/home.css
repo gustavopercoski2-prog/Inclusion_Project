@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
 
 :root {
-    --bg-main: rgb(82, 168, 255); 
-    --text-main: #333333; 
+    --bg-main: rgb(82, 168, 255);
+    --text-main: #333333;
+    --bg-card: #ffffff;
+    --nav-bg: #1A365D;
 }
 
 * {
@@ -21,4 +23,51 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: var(--nav-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 100%;
+    padding: 12px 8%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #E2E8F0;
+    font-weight: 600;
+    font-size: 1.05rem;
 }
