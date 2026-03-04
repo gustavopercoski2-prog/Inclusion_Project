@@ -71,5 +71,6 @@ Este projeto possui finalidade exclusivamente acadêmica e foi desenvolvido como
 - **Gustavo da Silva Percoski** – Desenvolvedor  
 - **José Márcio Kruger Costantini** – Desenvolvedor  
 - **Maycon da Silva Vieira** – Desenvolvedor  
+- **Gabriel Martens da Silva** - Desenvolvedor
 
 📩 Para contato, utilize as Issues do repositório.
