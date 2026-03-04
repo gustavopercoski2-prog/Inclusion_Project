@@ -149,6 +149,7 @@ header {
     flex: 1;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .hero-image img {
