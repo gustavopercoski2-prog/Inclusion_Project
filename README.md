@@ -46,13 +46,13 @@ Não há utilização de frameworks ou banco de dados, mantendo o foco no fortal
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/gustavopercoski2-prog/web-development-challenge.git
    ```
 
 2. Acesse a pasta do projeto:
 
    ```bash
-   cd nome-do-repositorio
+   cd web-development-challenge
    ```
 
 3. Abra o arquivo `home.html` no navegador
