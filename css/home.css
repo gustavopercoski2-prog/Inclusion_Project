@@ -113,6 +113,41 @@ header {
     width: 100%;
 }
 
+header.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 var(--border), 0 8px 32px rgba(15, 38, 71, 0.06);
+}
+
+header.scrolled .logo {
+    color: var(--navy);
+}
+
+header.scrolled .nav-links a {
+    color: var(--muted);
+}
+
+header.scrolled .nav-links a:hover {
+    background: var(--bg);
+    color: var(--navy);
+}
+
+.nav-cta {
+    background: var(--accent) !important;
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    padding: 8px 20px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45) !important;
+    background: var(--accent) !important;
+}
+
 .container {
     max-width: 1200px;
     width: 100%;
