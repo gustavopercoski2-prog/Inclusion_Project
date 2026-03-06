@@ -1,18 +1,26 @@
 :root {
-    --navy:   #0F2647;
-    --blue:   #1A4F9C;
-    --sky:    #3B82F6;
+    --navy: #0F2647;
+    --blue: #1A4F9C;
+    --sky: #3B82F6;
     --accent: #F59E0B;
-    --bg:     #F8FAFF;
-    --white:  #FFFFFF;
-    --text:   #1E293B;
-    --muted:  #64748B;
+    --bg: #F8FAFF;
+    --white: #FFFFFF;
+    --text: #1E293B;
+    --muted: #64748B;
     --border: #E2E8F0;
 }
 
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'DM Sans', sans-serif;
@@ -23,58 +31,70 @@ body {
 }
 
 header {
-    width: 100%;
-    background-color: var(--nav-bg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 5%;
+    transition: all 0.4s ease;
 }
 
 .navbar {
-    max-width: 100%;
-    padding: 12px 8%;
+    max-width: 1200px;
     margin: 0 auto;
+    height: 72px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 1.6rem;
+    gap: 10px;
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
     font-weight: 800;
-    color: #FFFFFF;
-    letter-spacing: -0.5px;
+    font-size: 1.5rem;
+    color: var(--white);
+    transition: color 0.3s;
 }
 
-.logo-icon {
-    height: 45px;
-    width: auto;
-    display: block;
+.logo-badge {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--sky), var(--blue));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    flex-shrink: 0;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 40px;
+    align-items: center;
+    gap: 8px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #E2E8F0;
-    font-weight: 600;
-    font-size: 1.05rem;
-    position: relative;
-    display: inline-block;
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
 }
 
 .nav-links a:hover {
-    color: #FFFFFF;
-    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
 }
 
 .nav-links a::after {
