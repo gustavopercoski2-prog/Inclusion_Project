@@ -296,3 +296,59 @@ header.scrolled .nav-links a:hover {
 .stat-item { display: flex; flex-direction: column; gap: 4px; }
 .stat-number { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--accent); }
 .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-weight: 500; }
+
+.hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.visual-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: all 0.3s ease;
+}
+
+.visual-card:hover {
+    background: rgba(255,255,255,0.16);
+    transform: translateX(6px);
+}
+
+.visual-card.highlight {
+    background: rgba(245,158,11,0.15);
+    border-color: rgba(245,158,11,0.35);
+}
+
+.vc-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.vc-icon.blue   { background: rgba(59,130,246,0.25); }
+.vc-icon.green  { background: rgba(16,185,129,0.25); }
+.vc-icon.amber  { background: rgba(245,158,11,0.25); }
+.vc-icon.purple { background: rgba(139,92,246,0.25); }
+
+.vc-text strong {
+    display: block;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white);
+    margin-bottom: 3px;
+}
+
+.vc-text span {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.6);
+}
