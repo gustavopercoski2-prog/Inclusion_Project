@@ -575,3 +575,46 @@ header.scrolled .nav-links a:hover {
 .game-card-new.emotions::before {
     background: linear-gradient(90deg, #F43F5E, #FB7185);
 }
+
+.card-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.memory .card-icon-wrap {
+    background: #EFF6FF;
+}
+
+.math .card-icon-wrap {
+    background: #ECFDF5;
+}
+
+.sound .card-icon-wrap {
+    background: #FFFBEB;
+}
+
+.emotions .card-icon-wrap {
+    background: #FFF1F2;
+}
+
+.game-card-new h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.game-card-new p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+    flex-grow: 1;
+    margin-bottom: 28px;
+}
