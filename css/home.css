@@ -559,3 +559,19 @@ header.scrolled .nav-links a:hover {
     height: 4px;
     border-radius: 24px 24px 0 0;
 }
+
+.game-card-new.memory::before {
+    background: linear-gradient(90deg, #3B82F6, #60A5FA);
+}
+
+.game-card-new.math::before {
+    background: linear-gradient(90deg, #10B981, #34D399);
+}
+
+.game-card-new.sound::before {
+    background: linear-gradient(90deg, #F59E0B, #FCD34D);
+}
+
+.game-card-new.emotions::before {
+    background: linear-gradient(90deg, #F43F5E, #FB7185);
+}
