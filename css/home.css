@@ -11,6 +11,8 @@
     --mint: #10B981;
     --rose: #F43F5E;
     --lilac: #8B5CF6;
+    --card-shadow: 0 4px 24px rgba(15, 38, 71, 0.08);
+    --card-hover: 0 16px 48px rgba(15, 38, 71, 0.16);
 }
 
 *,
@@ -617,4 +619,29 @@ header.scrolled .nav-links a:hover {
     line-height: 1.65;
     flex-grow: 1;
     margin-bottom: 28px;
+}
+
+.game-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    width: fit-content;
+}
+
+.game-badge.soon {
+    background: #F1F5F9;
+    color: #64748B;
+}
+
+.game-badge.soon::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #94A3B8;
+    border-radius: 50%;
 }
