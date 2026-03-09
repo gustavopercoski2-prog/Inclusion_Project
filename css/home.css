@@ -697,3 +697,66 @@ header.scrolled .nav-links a:hover {
 .about-content p:last-of-type {
     margin-bottom: 36px;
 }
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    border-color: var(--sky);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
+    transform: translateX(4px);
+}
+
+.fi-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.fi-icon.blue {
+    background: #EFF6FF;
+}
+
+.fi-icon.green {
+    background: #ECFDF5;
+}
+
+.fi-icon.amber {
+    background: #FFFBEB;
+}
+
+.fi-icon.purple {
+    background: #F5F3FF;
+}
+
+.fi-text strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 2px;
+}
+
+.fi-text span {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
