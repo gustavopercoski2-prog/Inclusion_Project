@@ -760,3 +760,72 @@ header.scrolled .nav-links a:hover {
     font-size: 0.82rem;
     color: var(--muted);
 }
+
+/*Visual do lado direito da section sobre*/
+.about-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+}
+
+.av-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.av-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow);
+}
+
+.av-card.wide {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.av-card.colored-1 {
+    background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+}
+
+.av-card.colored-2 {
+    background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+}
+
+.av-card.colored-3 {
+    background: linear-gradient(135deg, #FFF7ED, #FED7AA);
+}
+
+.av-emoji {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.av-card h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.av-card p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.av-card .av-number {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1;
+}
