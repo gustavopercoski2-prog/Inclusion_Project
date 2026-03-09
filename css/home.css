@@ -645,3 +645,31 @@ header.scrolled .nav-links a:hover {
     background: #94A3B8;
     border-radius: 50%;
 }
+
+/*Section sobre/features*/
+#sobre {
+    padding: 100px 5%;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+#sobre::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+}
+
+.about-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
