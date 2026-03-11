@@ -971,3 +971,34 @@ footer {
     padding: 4px 12px;
     border-radius: 100px;
 }
+
+/*Responsividade*/
+@media (max-width: 900px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        text-align: center;
+    }
+
+    .hero-actions { justify-content: center; }
+    .hero-stats   { justify-content: center; }
+
+    .hero-visual { display: none; }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about-visual { display: none; }
+
+    .footer-top { flex-direction: column; gap: 36px; }
+}
+
+@media (max-width: 600px) {
+    .navbar { height: 64px; }
+    .nav-links { gap: 2px; }
+    .nav-links a { padding: 6px 10px; font-size: 0.85rem; }
+    .hero-stats { flex-direction: column; gap: 20px; }
+    .games-grid { grid-template-columns: 1fr; }
+}
