@@ -1119,4 +1119,10 @@ footer {
     .games-grid {
         grid-template-columns: 1fr;
     }
+
+    .modal-box {
+        width: 100%;
+        aspect-ratio: unset;
+        height: 90%;
+    }
 }
