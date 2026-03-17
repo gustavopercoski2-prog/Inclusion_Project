@@ -106,7 +106,7 @@ body {
 
 .tela-final {
     display: none; 
-    position: absolute;
+    position: fixed;
     inset: 0;
     background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 40%, #2563EB 100%);
     flex-direction: column;
@@ -117,4 +117,9 @@ body {
 
 .tela-final h2, .tela-final p {
     color: var(--white);
+}
+
+.tela-final .btn-primary {
+    margin-top: 20px;
+    cursor: pointer;
 }
