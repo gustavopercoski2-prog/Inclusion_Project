@@ -137,6 +137,12 @@
                 <p>Desenvolve a percepção auditiva e a capacidade de associação por meio de estímulos sonoros
                     envolventes.</p>
                 <button class="game-badge play" onclick="abrirJogoSons()">Jogar</button>
+                <div id="modal-sons" class="modal-overlay" onclick="fecharJogoSons(event)">
+                    <div class="modal-box">
+                        <button class="modal-close" onclick="fecharJogoSons()">✕</button>
+                        <iframe id="iframe-sons" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
 
             <div class="game-card-new emotions">

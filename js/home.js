@@ -33,3 +33,12 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
     });
 });
+
+// --- Abrir modal jogo de sons---
+function abrirJogoSons() {
+    const modal = document.getElementById('modal-sons');
+    const iframe = document.getElementById('iframe-sons');
+    iframe.src = '/jogos/sons/sons.html';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
