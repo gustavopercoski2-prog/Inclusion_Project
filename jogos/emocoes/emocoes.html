@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Incluir+ | Jogo das Emoções</title>
+
+        <link rel="stylesheet" href="../../css/home.css">
+        <link rel="stylesheet" href="emocoes.css">
+    </head>
+
+    <body>
+        <div class="game-container">
+            <header class="game-header">
+                <h1>Rodada <span id="rodada-atual">1</span> de 10 </h1>
+                <p>Pontos <strong id="pontos">0</strong></p>
+            </header>
+
+            <main class="challenge-area">
+                <div class="expression-card">
+                    <img id="imagem-pergunta" src="" alt="Qual é esta emoção?">
+                </div>   
+                <p class="instruction">Como este personagem está se sentindo?</p>
+            </main>
+
+            <footer class="options-area">
+                <div id="container-opcoes" class="options-grid">
+                    </div>
+            </footer>
+        </div> <div id="tela-final" class="result-overlay" style="display: none;">
+            <div class="result-card">
+                <span class="result-icon">🏆</span>
+                <h2>Excelente Trabalho!</h2>
+                <p>Você identificou muitas emoções hoje.</p>
+                <div class="final-score">
+                    Você fez <strong id="pontos-finais">0</strong> pontos!
+                </div>
+                <button class="btn-primary" onclick="reiniciarJogo()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <script src="emocoes.js"></script>
+    </body>
+</html>

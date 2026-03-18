@@ -39,7 +39,7 @@ function iniciarNovaRodada() {
 
         // Adiciona a imagem e o nome
         btn.innerHTML = `
-            <img src="../../assets/imagens/${animal}.png" alt="Desenho de um ${animal}">
+            <img src="../../assets/imagens/jogo_sons/${animal}.png" alt="Desenho de um ${animal}">
             <h3>${animal}</h3>
         `;
         
