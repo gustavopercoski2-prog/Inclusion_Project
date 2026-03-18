@@ -1,0 +1,176 @@
+
+body {
+    background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 40%, #2563EB 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.game-header {
+    margin-bottom: 30px;
+}
+
+.game-header h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.score-pill {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 24px;
+    border-radius: 100px;
+    font-weight: 600;
+}
+
+.challenge-area {
+    margin-bottom: 25px;
+}
+
+.expression-card {
+    background: var(--white);
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 20px;
+    border-radius: 32px; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.expression-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.instruction {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+section, footer, .options-section {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.options-grid {
+    background: rgba(15, 38, 71, 0.85); 
+    border-radius: 28px;
+    padding: 20px 30px;     
+    margin: 30px auto 0;    
+    width: fit-content;     
+    display: flex;          
+    gap: 12px;              
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.emotion-btn {
+    background: var(--white);
+    color: var(--navy);
+    border: none;
+    border-radius: 100px;
+    padding: 18px 30px; 
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.emotion-btn:hover {
+    transform: translateY(-5px);
+    background: var(--accent);
+    color: var(--navy);
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+}
+
+.correct {
+    background: var(--mint) !important;
+    color: white !important;
+}
+
+.wrong {
+    background: var(--rose) !important;
+    color: white !important;
+}
+
+.result-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important; 
+    height: 100vh !important;  
+    background: rgba(15, 38, 71, 0.98) !important;
+    display: none;         
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    z-index: 99999 !important;
+}
+
+.result-card {
+    background: white;
+    padding: 40px ;
+    border-radius: 32px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px ;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8) ;
+    color: #0f2647;
+}
+
+.result-card h2, .result-card p, .result-card div {
+    color: #0f2647 !important;
+    margin-bottom: 15px;
+}
+
+.final-score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: #f0f4f8;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+@media (max-width: 600px) {
+    .expression-card {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
