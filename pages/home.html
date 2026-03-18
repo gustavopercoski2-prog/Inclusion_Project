@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incluir+</title>
+    <link rel="icon" href="/assets/imagens/sunflower.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap"
@@ -16,7 +17,7 @@
     <header id="header">
         <nav class="navbar">
             <a href="#" class="logo">
-                <div class="logo-badge">🎗️</div>
+                <div class="logo-badge">🌻</div>
                 Incluir+
             </a>
             <ul class="nav-links">
@@ -34,7 +35,7 @@
             <div class="hero-content">
                 <div class="hero-pill">
                     <span class="pill-dot">✨</span>
-                    Projeto Acadêmico 2026
+                    Plataforma de Inclusão
                 </div>
                 <h1>
                     Aprendizado <span>inclusivo</span> para todas as mentes
@@ -135,7 +136,13 @@
                 <h3>Sons dos Animais</h3>
                 <p>Desenvolve a percepção auditiva e a capacidade de associação por meio de estímulos sonoros
                     envolventes.</p>
-                <span class="game-badge soon">Em breve</span>
+                <button class="game-badge play" onclick="abrirJogoSons()">Jogar</button>
+                <div id="modal-sons" class="modal-overlay" onclick="fecharJogoSons(event)">
+                    <div class="modal-box">
+                        <button class="modal-close" onclick="fecharJogoSons()">✕</button>
+                        <iframe id="iframe-sons" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
 
             <div class="game-card-new emotions">
@@ -220,11 +227,11 @@
                 style="justify-content:center; background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.8)">Faça parte
             </div>
             <h2>Sua opinião constrói o Incluir+</h2>
-            <p>Este projeto é vivo e evolui com o feedback de quem importa. Compartilhe sua experiência, sugira
+            <p>Este projeto é vivo e evolui com o seu Feedback! Compartilhe sua experiência, sugira
                 melhorias ou entre em contato com a equipe.</p>
             <div class="cta-actions">
                 <a href="/pages/feedbacks.html" class="btn-primary">
-                    ✍️ Enviar Feedback
+                    ✍️ Escrever Feedback
                 </a>
                 <a href="#jogos" class="btn-ghost">
                     Ver Jogos
@@ -238,7 +245,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <div class="logo" style="margin-bottom:12px">
-                        <div class="logo-badge">🎗️</div>
+                        <div class="logo-badge">🌻</div>
                         Incluir+
                     </div>
                     <p>Aprendizado inclusivo e acolhedor para crianças neurodivergentes.</p>
@@ -264,7 +271,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 <strong>Incluir+</strong> — Projeto Acadêmico</p>
+                <p>&copy; 2026 <strong>Incluir+</strong> — Plataforma de Inclusão</p>
                 <div class="footer-tags">
                     <span class="footer-tag">TEA</span>
                     <span class="footer-tag">TDAH</span>
@@ -274,9 +281,6 @@
             </div>
         </div>
     </footer>
-
-    <main class="container">
-    </main>
 
     <script src="/js/home.js"></script>
 </body>

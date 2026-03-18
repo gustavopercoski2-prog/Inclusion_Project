@@ -33,3 +33,26 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
     });
 });
+
+// --- Abrir modal jogo de sons---
+function abrirJogoSons() {
+    const modal = document.getElementById('modal-sons');
+    const iframe = document.getElementById('iframe-sons');
+    iframe.src = '/jogos/sons/sons.html';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+// --- Fechar modal jogo de sons---
+function fecharJogoSons(event) {
+    if (event && event.target !== document.getElementById('modal-sons')) return;
+    const modal = document.getElementById('modal-sons');
+    const iframe = document.getElementById('iframe-sons');
+    modal.classList.remove('open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') fecharJogoSons();
+});
