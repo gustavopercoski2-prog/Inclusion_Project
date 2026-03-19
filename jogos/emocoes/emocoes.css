@@ -48,7 +48,7 @@ body {
     background: var(--white);
     width: 260px;
     height: 260px;
-    margin: 0 auto 20px;
+    margin: 20px auto;
     border-radius: 32px; 
     overflow: hidden; 
     display: flex;
