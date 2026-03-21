@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir+ | Matemática Visual</title>
+
+    <link rel="stylesheet" href="../../css/home.css">
+    <link rel="stylesheet" href="matematica.css">
+</head>
+
+<body>
+
+    <div id="tela-selecao" class="selecao-overlay">
+        <div class="selecao-card">
+            <span class="selecao-icon">🧮</span>
+            <h2>Matemática Visual</h2>
+            <p>Escolha qual operação você quer treinar hoje!</p>
+            <div class="selecao-grid">
+                <button class="selecao-btn" onclick="iniciarJogo('+')">
+                    <span class="op-icon">➕</span>
+                    <strong>Adição</strong>
+                    <span class="op-exemplo">3 + 4 = ?</span>
+                </button>
+                <button class="selecao-btn" onclick="iniciarJogo('-')">
+                    <span class="op-icon">➖</span>
+                    <strong>Subtração</strong>
+                    <span class="op-exemplo">7 - 2 = ?</span>
+                </button>
+                <button class="selecao-btn" onclick="iniciarJogo('×')">
+                    <span class="op-icon">✖️</span>
+                    <strong>Multiplicação</strong>
+                    <span class="op-exemplo">3 × 4 = ?</span>
+                </button>
+                <button class="selecao-btn" onclick="iniciarJogo('÷')">
+                    <span class="op-icon">➗</span>
+                    <strong>Divisão</strong>
+                    <span class="op-exemplo">12 ÷ 3 = ?</span>
+                </button>
+                <button class="selecao-btn destaque" onclick="iniciarJogo('all')">
+                    <span class="op-icon">🎲</span>
+                    <strong>Todas</strong>
+                    <span class="op-exemplo">Misturando tudo!</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tela-jogo" class="game-container" style="display: none;">
+        <div class="score-board">
+            <h1>Rodada <span id="rodada-atual">1</span> de 10</h1>
+            <p>Pontos <strong id="pontos">0</strong></p>
+        </div>
+
+        <main class="challenge-area">
+            <div class="expression-card">
+                <canvas id="canvas-conta" width="560" height="230"></canvas>
+            </div>
+            <p class="instruction">Qual é o resultado da conta?</p>
+        </main>
+
+        <footer class="options-area">
+            <div id="container-opcoes" class="options-grid"></div>
+        </footer>
+    </div>
+
+    <div id="tela-final" class="result-overlay" style="display: none;">
+        <div class="result-card">
+            <span class="result-icon">🏆</span>
+            <h2>Excelente Trabalho!</h2>
+            <p>Você arrasou na matemática hoje!</p>
+            <div class="final-score">
+                Você fez <strong id="pontos-finais">0</strong> pontos!
+            </div>
+            <div class="result-actions">
+                <button class="btn-primary" onclick="reiniciarJogo()">Jogar Novamente</button>
+                <button class="btn-secondary" onclick="voltarSelecao()">Trocar Operação</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="matematica.js"></script>
+</body>
+
+</html>
