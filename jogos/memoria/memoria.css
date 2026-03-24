@@ -1,0 +1,336 @@
+:root {
+    --navy: #0f2647;
+    --blue: #2563EB;
+    --white: #ffffff;
+    --accent: #f59e0b;
+    --mint: #10b981;
+    --rose: #f43f5e;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, var(--navy) 0%, #1e3a6e 40%, #2563EB 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.container-jogo {
+    width: 100%;
+    max-width: 760px;
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.placar {
+    margin-bottom: 20px;
+}
+
+.placar h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.placar h1 span {
+    color: var(--accent);
+}
+
+.pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pill {
+    background: rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .2);
+    padding: 6px 20px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.pill strong {
+    color: var(--accent);
+}
+
+.instrucao {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .9);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    margin-bottom: 18px;
+    min-height: 1.6em;
+}
+
+.grade-cartas {
+    background: rgba(15, 38, 71, 0.85);
+    border-radius: 28px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
+.carta {
+    aspect-ratio: 3/4;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.carta.virada {
+    transform: rotateY(180deg);
+}
+
+.carta.acertada {
+    transform: rotateY(180deg);
+    cursor: default;
+}
+
+.carta:active:not(.virada):not(.acertada) {
+    transform: scale(.95);
+}
+
+.frente,
+.verso {
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.verso {
+    background: var(--white);
+    border: 3px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+    padding: 14px;
+}
+
+.verso img {
+    width: 65%;
+    object-fit: contain;
+}
+
+.frente {
+    transform: rotateY(180deg);
+    background: var(--white);
+    border: 3px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+    padding: 12px 8px 10px;
+    gap: 8px;
+}
+
+.frente img {
+    width: 65%;
+    object-fit: contain;
+}
+
+.nome-carta {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(.6rem, 1.6vw, .78rem);
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.carta.acertada .frente {
+    border-color: var(--mint);
+    box-shadow: 0 0 0 3px var(--mint), 0 4px 14px rgba(0, 0, 0, .25);
+}
+
+.btn-primario {
+    background: var(--white);
+    color: var(--navy);
+    border: none;
+    border-radius: 100px;
+    padding: 16px 40px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+    transition: all .3s cubic-bezier(.34, 1.56, .64, 1);
+    margin-top: 8px;
+}
+
+.btn-primario:hover {
+    transform: translateY(-4px);
+    background: var(--accent);
+    box-shadow: 0 10px 20px rgba(245, 158, 11, .35);
+}
+
+/* Telas (overlays) */
+.tela {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 38, 71, 0.97);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.tela.active {
+    display: flex;
+}
+
+#tela-contagem {
+    background: rgba(15, 38, 71, 0.45);
+}
+
+.titulo-tela {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 800;
+}
+
+.subtitulo-tela {
+    font-size: .95rem;
+    color: rgba(255, 255, 255, .6);
+    max-width: 360px;
+}
+
+.grade-preview {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 540px;
+}
+
+.card-preview {
+    background: rgba(255, 255, 255, .08);
+    border: 1.5px solid rgba(255, 255, 255, .14);
+    border-radius: 14px;
+    padding: 12px 6px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    transition: background .2s, transform .2s;
+}
+
+.card-preview:hover {
+    background: rgba(255, 255, 255, .15);
+    transform: translateY(-3px);
+}
+
+.card-preview img {
+    width: 100%;
+    max-height: 56px;
+    object-fit: contain;
+}
+
+.card-preview span {
+    font-family: 'Sora', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .8);
+}
+
+.numero-contagem {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(5rem, 20vw, 9rem);
+    font-weight: 800;
+    color: var(--accent);
+    text-shadow: 0 0 40px rgba(245, 158, 11, .7), 0 2px 12px rgba(0, 0, 0, .8);
+    line-height: 1;
+    animation: pulsar 1s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.texto-contagem {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .9);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card-resultado {
+    background: var(--white);
+    padding: 40px 36px;
+    border-radius: 32px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+    color: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.icone-resultado {
+    font-size: 3.5rem;
+}
+
+.card-resultado h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.card-resultado p {
+    color: #4b6080;
+    font-size: .95rem;
+}
+
+.placar-final {
+    background: #f0f4f8;
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.placar-final strong {
+    color: var(--blue);
+    font-size: 1.4rem;
+}
+
+.card-resultado .btn-primario {
+    width: 100%;
+}

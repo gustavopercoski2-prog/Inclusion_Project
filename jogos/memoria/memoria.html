@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir+ | Jogo da Memória</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="memoria.css">
+</head>
+
+<body>
+
+    <div id="tela-inicio" class="tela active">
+        <h1 class="titulo-tela">🧠 Jogo da Memória</h1>
+        <p class="subtitulo-tela">Encontre todos os pares! Você terá 5 segundos para memorizar as cartas antes de
+            começar.</p>
+        <div class="grade-preview" id="grade-preview"></div>
+        <button class="btn-primario" onclick="iniciarJogo()">Iniciar Jogo</button>
+    </div>
+
+    <div id="tela-contagem" class="tela">
+        <p class="texto-contagem">Memorize as cartas!</p>
+        <div class="numero-contagem" id="numero-contagem">5</div>
+        <p class="texto-contagem">segundos restantes</p>
+    </div>
+
+    <div id="tela-fim" class="tela">
+        <div class="card-resultado">
+            <span class="icone-resultado">🏆</span>
+            <h2>Parabéns!</h2>
+            <p>Você encontrou todos os pares e treinou sua memória!</p>
+            <div class="placar-final">
+                <div>Tentativas: <strong id="total-tentativas">0</strong></div>
+                <div>Tempo: <strong id="tempo-final">0s</strong></div>
+            </div>
+            <button class="btn-primario" onclick="iniciarJogo()">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <div class="container-jogo">
+        <div class="placar">
+            <h1>Jogo da <span>Memória</span></h1>
+            <div class="pills">
+                <div class="pill">Tentativas: <strong id="contador-tentativas">0</strong></div>
+                <div class="pill">Pares: <strong id="contador-pares">0</strong> / 6</div>
+            </div>
+        </div>
+        <p class="instrucao" id="instrucao">Encontre todos os pares!</p>
+        <div class="grade-cartas" id="grade-cartas"></div>
+    </div>
+
+    <script src="memoria.js" defer></script>
+</body>
+
+</html>
