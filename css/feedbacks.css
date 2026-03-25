@@ -1,0 +1,303 @@
+:root {
+    --navy: #0F2647;
+    --blue: #1A4F9C;
+    --sky: #3B82F6;
+    --accent: #F59E0B;
+    --bg: #F8FAFF;
+    --white: #FFFFFF;
+    --text: #1E293B;
+    --muted: #64748B;
+    --border: #E2E8F0;
+    --mint: #10B981;
+    --rose: #F43F5E;
+    --lilac: #8B5CF6;
+    --card-shadow: 0 4px 24px rgba(15, 38, 71, 0.08);
+    --card-hover: 0 16px 48px rgba(15, 38, 71, 0.16);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--accent);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-top: 72px;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 5%;
+    height: 90px;
+    transition: transform 0.35s ease, background 0.35s ease;
+}
+
+header.scrolled {
+    height: 70px;
+    background-color: rgba(15, 38, 71, 0.95);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--white);
+    transition: all color 0.3s ease;
+}
+
+.logo :hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+}
+
+.logo-badge {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--sky), var(--blue));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    flex-shrink: 0;
+}
+
+header.scrolled .logo {
+    font-size: 1.3rem;
+}
+
+/*Área dos links*/
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -6px;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/*Área principal*/
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg);
+    margin: 100px auto;
+    border-radius: 15px;
+
+    width: 90%;
+    max-width: 700px;
+    padding: 50px;
+    box-shadow: var(--card-shadow);
+    transition: 0.3s;
+}
+
+
+
+.main h1 {
+    margin-bottom: 25px;
+    font-family: 'Sora', sans-serif;
+    text-align: center;
+
+}
+
+/*Formulário*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--border);
+}
+
+label:has(+ input:required)::after {
+    content: " *";
+    color: red;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+}
+
+/*Ressaltar o texto quando selecionado*/
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--sky);
+}
+
+select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--sky);
+}
+
+/*Botão de enviar*/
+button {
+    background: var(--sky);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--blue);
+}
+
+/*Opções de avaliação dos jogos*/
+.jogos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.jogo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: 0.2s;
+}
+
+.jogo-item:hover {
+    box-shadow: var(--card-shadow);
+    border-color: var(--sky);
+}
+
+.jogo-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Estrelas */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    transition: transform 0.15s, color 0.2s;
+}
+
+.rating label:hover {
+    transform: scale(1.2);
+}
+
+.rating input:checked~label {
+    color: var(--accent);
+}
+
+.rating label:hover,
+.rating label:hover~label {
+    color: var(--accent);
+}
+
+/* Desabilitadas as estrelas */
+.rating.disabled label {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/*Ressaltar o erro por não avaliar o jogo marcado*/
+.erro {
+    border: 2px solid var(--rose);
+    padding: 10px;
+    border-radius: 10px;
+}

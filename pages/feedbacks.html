@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir+: Feedback e Sugestões</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/icone.ico">
+    <link rel="stylesheet" href="/css/feedbacks.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <nav class="navbar">
+            <a href="/pages/home.html" class="logo">
+                <div class="logo-badge">🎗️</div>
+                Incluir+
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/pages/home.html" class="nav-cta">Home</a></li>
+                <li><a href="#jogos">Jogos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main">
+        <h1>Ajude-nos a melhorar a sua experiência:</h1>
+
+        <form action="home.html" method="get">
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" placeholder="Digite seu nome" required />
+
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" placeholder="Digite seu email" required>
+
+            <label>Como foi sua experiência geral no site?</label>
+            <select name="avaliacao">
+                <option value="excelente">Excelente</option>
+                <option value="boa">Boa</option>
+                <option value="regular">Regular</option>
+                <option value="ruim">Ruim</option>
+                <option value="pessima">Péssima</option>
+            </select>
+
+            <label for="diver">Você foi diagnosticado com: </label>
+            <select name="diver" id="diver">
+                <option value="tea">TEA</option>
+                <option value="tdah">TDAH</option>
+                <option value="nenhum">Nenhum diagnóstico</option>
+                <option value="outro">Outro diagnóstico</option>
+                <option value="privacidade">Prefiro não opinar</option>
+                <option value="responsável">Sou o responsável pela criança</option>
+            </select>
+
+            <label>Quais jogos você jogou e qual a sua avaliação sobre eles?</label>
+            <div class="jogos">
+
+                <div class="jogo-item">
+                    <label class="jogo-label">
+                        <input type="checkbox" class="check-jogo">
+                        🧠 Jogo da Memória
+                    </label>
+
+                    <div class="rating disabled">
+                        <input type="radio" name="memoria" id="memoria5"><label for="memoria5">★</label>
+                        <input type="radio" name="memoria" id="memoria4"><label for="memoria4">★</label>
+                        <input type="radio" name="memoria" id="memoria3"><label for="memoria3">★</label>
+                        <input type="radio" name="memoria" id="memoria2"><label for="memoria2">★</label>
+                        <input type="radio" name="memoria" id="memoria1"><label for="memoria1">★</label>
+                    </div>
+                </div>
+
+                <div class="jogo-item">
+                    <label class="jogo-label">
+                        <input type="checkbox" class="check-jogo">
+                        😊 Emoções
+                    </label>
+
+                    <div class="rating disabled">
+                        <input type="radio" name="emocoes" id="emo5"><label for="emo5">★</label>
+                        <input type="radio" name="emocoes" id="emo4"><label for="emo4">★</label>
+                        <input type="radio" name="emocoes" id="emo3"><label for="emo3">★</label>
+                        <input type="radio" name="emocoes" id="emo2"><label for="emo2">★</label>
+                        <input type="radio" name="emocoes" id="emo1"><label for="emo1">★</label>
+                    </div>
+                </div>
+
+                <div class="jogo-item">
+                    <label class="jogo-label">
+                        <input type="checkbox" class="check-jogo">
+                        🍎 Matemática Visual
+                    </label>
+
+                    <div class="rating disabled">
+                        <input type="radio" name="matematica" id="mat5"><label for="mat5">★</label>
+                        <input type="radio" name="matematica" id="mat4"><label for="mat4">★</label>
+                        <input type="radio" name="matematica" id="mat3"><label for="mat3">★</label>
+                        <input type="radio" name="matematica" id="mat2"><label for="mat2">★</label>
+                        <input type="radio" name="matematica" id="mat1"><label for="mat1">★</label>
+                    </div>
+                </div>
+
+                <div class="jogo-item">
+                    <label class="jogo-label">
+                        <input type="checkbox" class="check-jogo">
+                        🔊 Sons dos Animais
+                    </label>
+
+                    <div class="rating disabled">
+                        <input type="radio" name="sons" id="sons5"><label for="sons5">★</label>
+                        <input type="radio" name="sons" id="sons4"><label for="sons4">★</label>
+                        <input type="radio" name="sons" id="sons3"><label for="sons3">★</label>
+                        <input type="radio" name="sons" id="sons2"><label for="sons2">★</label>
+                        <input type="radio" name="sons" id="sons1"><label for="sons1">★</label>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <p id="mensagem" class="mensagem"></p>
+
+
+            <label>Comentários, críticas ou sugestões:</label>
+            <textarea rows="4" placeholder="Conte-nos sua experiência"></textarea>
+
+            <button type="submit">Enviar Feedback</button>
+
+        </form>
+
+    </section>
+
+    <script src="/js/feedbacks.js"></script>
+
+</body>
+
+</html>
