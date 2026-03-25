@@ -88,7 +88,7 @@ body {
 }
 
 .carta {
-    aspect-ratio: 1/1; /* quadrado em vez de 3/4 — ocupa menos altura */
+    aspect-ratio: 1/1; 
     position: relative;
     transform-style: preserve-3d;
     transition: transform .5s cubic-bezier(.4,0,.2,1);
@@ -335,4 +335,9 @@ body {
 
 .card-resultado .btn-primario {
     width: 100%;
+}
+
+@media (max-width: 520px) {
+    .grade-cartas  { grid-template-columns: repeat(3, 1fr); }
+    .grade-preview { grid-template-columns: repeat(3, 1fr); }
 }
