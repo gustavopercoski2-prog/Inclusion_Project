@@ -29,7 +29,7 @@ html {
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background-color: var(--accent);
+    background-color: var(--navy);
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
@@ -45,29 +45,24 @@ header {
     right: 0;
     z-index: 100;
     padding: 0 5%;
-    height: 90px;
-    transition: transform 0.35s ease, background 0.35s ease;
+    height: 72px;
+    transition: background 0.35s ease, box-shadow 0.35s ease;
 }
 
 header.scrolled {
-    height: 70px;
-    background-color: rgba(15, 38, 71, 0.95);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-header.hide {
-    transform: translateY(-100%);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 var(--border), 0 8px 32px rgba(15, 38, 71, 0.06);
 }
 
 .navbar {
     max-width: 1200px;
     margin: 0 auto;
-    height: 100%;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .logo {
@@ -79,12 +74,7 @@ header.hide {
     font-weight: 800;
     font-size: 1.5rem;
     color: var(--white);
-    transition: all color 0.3s ease;
-}
-
-.logo :hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: var(--white);
+    transition: color 0.3s;
 }
 
 .logo-badge {
@@ -100,11 +90,6 @@ header.hide {
     flex-shrink: 0;
 }
 
-header.scrolled .logo {
-    font-size: 1.3rem;
-}
-
-/*Área dos links*/
 .nav-links {
     list-style: none;
     display: flex;
@@ -127,18 +112,32 @@ header.scrolled .logo {
     color: var(--white);
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -6px;
-    border-radius: 2px;
-    transition: width 0.3s ease;
+header.scrolled .logo {
+    color: var(--navy);
 }
 
-.nav-links a:hover::after {
-    width: 100%;
+header.scrolled .nav-links a {
+    color: var(--muted);
+}
+
+header.scrolled .nav-links a:hover {
+    background: var(--bg);
+    color: var(--navy);
+}
+
+.nav-cta {
+    background: var(--accent) !important;
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    padding: 8px 20px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45) !important;
+    background: var(--accent) !important;
 }
 
 /*Área principal*/
@@ -159,13 +158,10 @@ header.scrolled .logo {
     transition: 0.3s;
 }
 
-
-
 .main h1 {
     margin-bottom: 25px;
     font-family: 'Sora', sans-serif;
     text-align: center;
-
 }
 
 /*Formulário*/
@@ -175,7 +171,6 @@ form {
     gap: 15px;
     width: 100%;
     max-width: 400px;
-    border: 1px solid var(--border);
 }
 
 label:has(+ input:required)::after {
@@ -300,4 +295,17 @@ button:hover {
     border: 2px solid var(--rose);
     padding: 10px;
     border-radius: 10px;
+}
+
+/*Responsividade*/
+@media (max-width: 768px) {
+    .main {
+        margin: 20px auto;
+        padding: 30px 24px;
+        width: 95%;
+    }
+
+    form {
+        max-width: 100%;
+    }
 }
