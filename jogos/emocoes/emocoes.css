@@ -166,11 +166,22 @@ section, footer, .options-section {
 
 @media (max-width: 600px) {
     .expression-card {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
-    
+
     .options-grid {
+        display: grid;
         grid-template-columns: 1fr 1fr;
+        width: 90%;
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .emotion-btn {
+        padding: 14px 10px;
+        font-size: 0.9rem;
+        white-space: normal;
+        text-align: center;
     }
 }
